@@ -1,73 +1,86 @@
-# React + TypeScript + Vite
+Crypto Checkout UI — Frontend Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React (Vite)
 
-## React Compiler
+TypeScript
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tailwind CSS
 
-## Expanding the ESLint configuration
+React Router DOM
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Lucide Icons
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Screens Implemented
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Two screens were selected from the Figma design:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Checkout Form
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Payment type tabs
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Editable “You pay” and “You receive” amounts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Currency selector with icons
+
+Wallet selection (MetaMask, Rainbow, WalletConnect, others)
+
+Disabled CTA until all required fields are completed
+
+2. Checkout Review
+
+Payment summary
+
+Selected wallet confirmation
+
+Final confirmation call-to-action
+
+These screens demonstrate component reuse, state management, and layout consistency.
+
+Setup Instructions
+Clone the Repository
+https://github.com/johnson2611/NovaCrust-Frontend.git
+
+cd NovaCrust-lab
+
+Install Dependencies
+npm install
+
+Run the Development Server
+npm run dev
+
+
+The application will be available at:
+
+http://localhost:5173
+
+Project Structure (Simplified)
+src/
+ ├─ components/
+ │   ├─ pages/
+ │   ├─ AmountCards/
+ │   ├─ Tabs/
+ │   ├─ Button/
+ │   └─ SelectRow/
+ ├─ wallets/
+ │   └─ PaySelect/
+ ├─ currencies/
+ │   └─ CurrenciesDropdown.tsx
+ ├─ assets/
+ │   └─ icons/
+ ├─ App.tsx
+ └─ main.tsx
+
+Functional Notes
+
+All form inputs are controlled using React state
+
+The Convert button is disabled until required fields are completed
+
+Navigation between screens is handled via React Router
+
+Currency and wallet data are mocked
+
+Icons are statically imported for reliability and clarity
