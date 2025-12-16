@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { wallets } from "../wallets";
+import { wallets } from "../../wallets/wallets";
 
 interface PayFromSelectProps {
   value?: string | null;

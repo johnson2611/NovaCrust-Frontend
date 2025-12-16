@@ -4,7 +4,7 @@ import Tabs from "../../Tabs/Tabs";
 import AmountCard from "../../AmountCards/AmountCard";
 import SelectRow from "../../SelectRow/SelectRow";
 import Button from "../../Button/Button";
-import PayFromSelect from "../../../wallets/PaySelect/PaySelectForm";
+import PayFromSelect from "../../PaySelect/PayForm";
 
 const tabs = [
   { label: "Crypto to cash", value: "crypto-cash" },

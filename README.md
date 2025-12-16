@@ -65,7 +65,7 @@ src/
  │   ├─ Button/
  │   └─ SelectRow/
  ├─ wallets/
- │   └─ PaySelect/
+ │   └─ PaySelect/PaySelectForm
  ├─ currencies/
  │   └─ CurrenciesDropdown.tsx
  ├─ assets/
